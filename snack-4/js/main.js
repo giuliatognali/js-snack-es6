@@ -7,35 +7,30 @@ function randomNum(min, max) {
 const min = 0;
 const max = 99;
 
-let newPoints = randomNum(min, max);
-console.log(newPoints);
-let newFouls = randomNum(min, max);
-console.log(newFouls);
-
 //lista squadre (array di oggetti)
 const teamList = [
     {
-        nome: 'Juventus',
+        name: 'Juventus',
         points: 0,
         fouls: 0
     },
     {
-        nome: 'Milan',
+        name: 'Milan',
         points: 0,
         fouls: 0
     },
     {
-        nome: 'Inter',
+        name: 'Inter',
         points: 0,
         fouls: 0
     },
     {
-        nome: 'Roma',
+        name: 'Roma',
         points: 0,
         fouls: 0
     },
     {
-        nome: 'Lazio',
+        name: 'Lazio',
         points: 0,
         fouls: 0
     }
@@ -52,6 +47,13 @@ const ValuesList = teamList.map((element) => {
     element.fouls = newFouls;
     return element;
 
-})
-
+});
 console.log(ValuesList);
+
+// nuovoa lista contentente solo name e points
+const TeamFouls = ValuesList.map((element) => {
+    const {name, points} = element;
+    return {name, points};
+
+});
+console.log(TeamFouls);
