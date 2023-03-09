@@ -48,20 +48,28 @@ const studentsListUpperCase = studentsList.map((element) => {
 console.log(studentsListUpperCase);
 
 const stundetsListgrades70 = studentsList.filter((element) => {
-    if (element.TotalSum > 70){
-        return element;
+    if (element.TotalSum > 70) {
+        return true;
     }
-});
+}).map(element => element.name);  //concatenare filter e map! 
 
 //lista studenti voti > 70
 console.log(stundetsListgrades70);
 
 
-const stundetsListgrades70Id120= studentsList.filter((element) => {
-    if (element.TotalSum > 70 && element.id > 120){
-        return element;
+const stundetsListgrades70Id120 = studentsList.filter((element) => {
+    if (element.TotalSum > 70 && element.id > 120) {
+        return true;
     }
+}).map((element) => {
+    return element.name;
 });
 
 //lista studenti voti > 70 e id > 120
-console.log (stundetsListgrades70Id120);
+console.log(stundetsListgrades70Id120);
+
+
+//soluzione definitiva!!!
+const NewstundetsListgrades70Id120 = studentsList.filter(element => element.TotalSum > 70 && element.id > 120).map(element => element.name); 
+
+console.log(NewstundetsListgrades70Id120);
